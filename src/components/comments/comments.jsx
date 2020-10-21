@@ -7,7 +7,7 @@ const Comments = ({offer}) => {
 
   return (
     <ul className="reviews__list">
-      {COMMENTS.map((comment) => (offer.id === comment.offer ? 
+      {COMMENTS.map((comment) => (offer.id === comment.offer ?
         <Comment key={comment.id} maxRating={offer.maxRating} comment={comment}/> : ``))}
     </ul>
   );
