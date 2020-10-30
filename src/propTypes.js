@@ -20,6 +20,7 @@ export const OfferProps = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  coords: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export const CommentProps = {

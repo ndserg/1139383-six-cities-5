@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Cards from "../cards/cards";
+import Map from "../map/map";
 import {OfferProps} from "../../propTypes";
 
 const Main = ({rentsCount, offers, onHeaderClick}) => {
@@ -104,7 +105,9 @@ const Main = ({rentsCount, offers, onHeaderClick}) => {
               />;
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map offers={offers}/>
+              </section>
             </div>
           </div>
         </div>
