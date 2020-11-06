@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
-import {OfferProps} from "../../propTypes";
+import {OfferProps, CardClassestProps} from "../../propTypes";
 
-const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
+const Card = ({offer, cardClasses, onHeaderClick, onMouseOverCard}) => {
   const {
     label,
     inBookmarks,
@@ -27,7 +27,7 @@ const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
   };
 
   return (
-    <article className="cities__place-card place-card"
+    <article className={`${cardClasses.article} place-card`}
       onMouseOver={handleHover}>
 
       {label === `none` ? `` :
@@ -37,7 +37,7 @@ const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
           </span>
         </div>}
 
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${cardClasses.imageWrapper} place-card__image-wrapper`}>
         <Link to={`/offer/${offer.id}`}>
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image"/>
         </Link>
@@ -72,7 +72,7 @@ const Card = ({offer, onHeaderClick, onMouseOverCard}) => {
 
 Card.propTypes = {
   offer: PropTypes.shape(OfferProps).isRequired,
-
+  cardClasses: PropTypes.shape(CardClassestProps).isRequired,
   onHeaderClick: PropTypes.func.isRequired,
   onMouseOverCard: PropTypes.func.isRequired
 };

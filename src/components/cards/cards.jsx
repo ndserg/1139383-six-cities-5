@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Card from "../card/card";
-import {OfferProps} from "../../propTypes";
+import {OfferProps, CardClassestProps} from "../../propTypes";
 
 export default class Cards extends React.PureComponent {
   constructor(props) {
@@ -17,14 +17,15 @@ export default class Cards extends React.PureComponent {
   }
 
   render() {
-    const {offers, onHeaderClick} = this.props;
+    const {offers, cardClasses, onHeaderClick} = this.props;
 
     return (
-      <div className="cities__places-list places__list tabs__content">
+      <div className={`places__list ${cardClasses.cardsList}`}>
         {offers.map((offer, id) => (
           <Card
             key={id}
             offer={offer}
+            cardClasses={cardClasses}
             onHeaderClick={onHeaderClick}
             onMouseOverCard={this.handleHover}
           />
@@ -36,5 +37,6 @@ export default class Cards extends React.PureComponent {
 
 Cards.propTypes = {
   offers: PropTypes.arrayOf(PropTypes.shape(OfferProps)).isRequired,
-  onHeaderClick: PropTypes.func.isRequired
+  cardClasses: PropTypes.shape(CardClassestProps).isRequired,
+  onHeaderClick: PropTypes.func.isRequired,
 };
