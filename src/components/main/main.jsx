@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Cards from "../cards/cards";
 import Map from "../map/map";
+import {mainCardClasses} from "../../componentClasses";
 import {OfferProps} from "../../propTypes";
 
 const Main = ({rentsCount, offers, onHeaderClick}) => {
@@ -102,12 +103,14 @@ const Main = ({rentsCount, offers, onHeaderClick}) => {
               <Cards
                 offers={offers}
                 onHeaderClick={onHeaderClick}
+                cardClasses={mainCardClasses}
               />;
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map">
-                <Map offers={offers}/>
-              </section>
+              <Map
+                offers={offers}
+                mapClass={`cities__map`}
+              />
             </div>
           </div>
         </div>

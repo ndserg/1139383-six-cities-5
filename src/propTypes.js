@@ -32,3 +32,9 @@ export const CommentProps = {
   date: PropTypes.string.isRequired,
   userRating: PropTypes.number.isRequired,
 };
+
+export const CardClassestProps = {
+  cardsList: PropTypes.string.isRequired,
+  article: PropTypes.string.isRequired,
+  imageWrapper: PropTypes.string.isRequired,
+};

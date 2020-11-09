@@ -8,6 +8,7 @@ class Map extends PureComponent {
   constructor(props) {
     super(props);
     this.offers = props.offers;
+    this.mapClass = props.mapClass;
   }
 
   componentDidMount() {
@@ -41,13 +42,14 @@ class Map extends PureComponent {
 
   render() {
     return (
-      <div id="map"></div>
+      <section id="map" className={`${this.mapClass} map`}></section>
     );
   }
 }
 
 Map.propTypes = {
   offers: PropTypes.arrayOf(PropTypes.shape(OfferProps)).isRequired,
+  mapClass: PropTypes.string.isRequired,
 };
 
 export default Map;
